@@ -19,6 +19,9 @@ const Nav = () => {
                 <Link className={styles.link} href='/articles'>
                     <li className={styles.link}>Articles</li>
                 </Link>
+                <Link className={styles.link} href='/cases'>
+                    <li className={styles.link}>Cases</li>
+                </Link>
                 <Link className={styles.link} href='/about'>
                     <li className={styles.link}>About</li>
                 </Link>

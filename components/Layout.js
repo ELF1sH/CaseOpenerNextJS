@@ -9,7 +9,7 @@ const Layout = (props) => {
             <Meta />
             <div className={styles.container}>
                 <Nav />
-                <div>{ props.children }</div>
+                { props.children }
                 <Footer />
             </div>
         </>

@@ -3,7 +3,7 @@ import Post from "../components/Post";
 
 const Posts = (props) => {
     return (
-        <div>
+        <div style={{ paddingTop: '30px' }}>
             <h4 style={{textAlign: 'center'}}>Info is taken from <code>JsonPlaceholder</code></h4>
             {props.posts.map(article => {
                 return <Post body={article.body} title={article.title} key={article.id} id={article.id} isPost={true} />

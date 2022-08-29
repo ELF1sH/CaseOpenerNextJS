@@ -1,19 +1,21 @@
-$minNavHeight: 53px;
-$navBgColor: #E7D5C3;
-$linkHoverColor: #D8C7B6;
+@import './abstracts.scss';
 
 .nav {
-    background-color: $navBgColor;
+    margin-top: 10px;
     padding: 0 10%;
     display: flex;
     min-height: $minNavHeight;
+    display: flex;
+    justify-content: center;
     .logoContainer {
-        margin-right: 60px;
         cursor: pointer;
+        padding: 0 10px;
+        @include mainHover(2px);
         .logo {
             font-size: 40px;
             font-style: italic;
             letter-spacing: 10px;
+            font-weight: 800;
         }
     }
     .linksContainer {
@@ -26,9 +28,9 @@ $linkHoverColor: #D8C7B6;
             cursor: pointer;
             display: flex;
             align-items: center;
-            transition: .1s background-color ease-in;
+            border: 2px solid $mainBgColor;
             &:hover {
-                background-color: $linkHoverColor;
+                border: 2px solid $mainFontColor;
             }
         }
     }

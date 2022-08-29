@@ -3,9 +3,9 @@ import Meta from "../components/Meta";
 
 const About = () => {
     return (
-        <div>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <Meta title={'About page'} />
-            This is the about page
+            <h1>This is about page</h1>
         </div>
     )
 }

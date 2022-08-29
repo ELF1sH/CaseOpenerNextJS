@@ -1,6 +1,7 @@
 $navBgColor: #E7D5C3;
 
 .footer {
-    background-color: $navBgColor;
     padding: 10px 30px;
+    display: flex;
+    justify-content: center;
 }

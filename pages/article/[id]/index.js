@@ -12,7 +12,7 @@ const Article = (props) => {
             <br />
             <h3>This is a post with id {id}</h3>
             <br />
-            <h2>{article.title}</h2>
+            <h2 style={{ marginBottom: "10px" }}>{article.title}</h2>
             <p>{article.body}</p>
             <br /> <br />
             <Link href='/articles'>←←←GO BACK</Link>

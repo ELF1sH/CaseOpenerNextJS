@@ -1,0 +1,16 @@
+$mainBgColor: #14213d;
+$mainFontColor: #D8C7B6;
+
+$minNavHeight: 53px;
+
+
+
+@mixin mainHover($borderWidth) {
+    border: $borderWidth solid $mainFontColor;
+    cursor: pointer;
+    transition: .5s background-color linear;
+    &:hover {
+        background-color: $mainFontColor;
+        color: $mainBgColor;
+    }
+}
