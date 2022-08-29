@@ -1,21 +1,19 @@
 import styles from '../styles/CasesPage.module.scss'
-import Image from 'next/image'
 
 import FractureCase from '../public/cases/FractureCase.png'
+import ClutchCase from '../public/cases/ClutchCase.png'
+
+import CasesGrid from "../components/CasesGrid";
 
 const Cases = (props) => {
-    console.log(props)
     return (
-        <div>
-            cases
-            <Image src={FractureCase} alt={"Fracture Case"} />
-        </div>
+        <CasesGrid cases={props.cases} images={[FractureCase, ClutchCase]} />
     )
 }
 
-export const GetStaticProps = async () => {
+export const getStaticProps = async () => {
     const res = await fetch(`${process.env.API_HOST}/cases`)
-    const cases = res.json()
+    const cases = await res.json()
 
     return {
         props: {

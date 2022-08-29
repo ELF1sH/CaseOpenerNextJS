@@ -11,7 +11,7 @@ const Articles = (props) => {
     )
 }
 
-export const GetStaticProps = async () => {
+export const getStaticProps = async () => {
     const res = await fetch(`${process.env.API_HOST}/articles`)
     const articles = await res.json()
 
