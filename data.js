@@ -43,3 +43,15 @@ export const cases = [
         name: 'Clutch case'
     }
 ]
+
+export const probabilities = {
+    'exceedinglyRare': 0.3,
+    'covert': 0.83,
+    'classified': 2.83,
+    'restricted': 15.6,
+    'milSpec': 80.44
+}
+
+export const getRandomFloat = (start, end) => {
+    return (Math.random() * (end - start) + start).toFixed(4)
+}

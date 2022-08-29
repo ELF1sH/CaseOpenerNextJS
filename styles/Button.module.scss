@@ -1,0 +1,19 @@
+@import './abstracts';
+
+.button {
+    background: none;
+    outline: none;
+    border: 1px solid $mainFontColor;
+    padding: 10px 20px;
+    color: $mainFontColor;
+    @include mainHover(1px);
+}
+
+.buttonBig {
+    @extend .button;
+    padding: 13px 22px;
+    font-size: 20px;
+    font-weight: 700;
+    border-width: 4px;
+    @include mainHover(4px);
+}

@@ -2,7 +2,11 @@ $mainBgColor: #14213d;
 $mainFontColor: #D8C7B6;
 
 $minNavHeight: 53px;
-
+$exceedinglyRare: #CFB017;
+$covertColor: #EB4B4B;
+$classifiedColor: #D32CE6;
+$restrictedColor: #8847FF;
+$milSpecColor: #4B69CD;
 
 
 @mixin mainHover($borderWidth) {

@@ -1,0 +1,23 @@
+@import './abstracts.scss';
+
+.container {
+    width: 146px;
+    height: 146px;
+    border-right: 1px solid white;
+}
+
+.exceedinglyRare {
+    background-color: $exceedinglyRare;
+}
+.covert {
+    background-color: $covertColor;
+}
+.classified {
+    background-color: $classifiedColor;
+}
+.restricted {
+    background-color: $restrictedColor;
+}
+.milSpec {
+    background-color: $milSpecColor;
+}

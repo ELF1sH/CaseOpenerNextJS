@@ -1,0 +1,31 @@
+@import './abstracts';
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .window {
+        height: 150px;
+        width: 500px;
+        border: 2px solid $mainFontColor;
+        position: relative;
+        overflow: hidden;
+        .tape {
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+.tapeAnimation {
+    animation: tapeScroll 5s ease-in-out forwards;
+}
+
+@keyframes tapeScroll {
+    to {
+        left: -7000px;
+    }
+}
