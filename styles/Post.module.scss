@@ -1,0 +1,17 @@
+.postContainer {
+    padding: 10px 20px;
+    border: 1px solid black;
+    width: 70%;
+    margin: 10px auto;
+    cursor: pointer;
+    transition: 0.2s background-color ease-in;
+    &:hover {
+        background-color: aliceblue;
+    }
+}
+
+@media(max-width: 600px) {
+    .postContainer {
+        width: 95%;
+    }
+}

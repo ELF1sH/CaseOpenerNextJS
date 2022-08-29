@@ -1,0 +1,35 @@
+$minNavHeight: 53px;
+$navBgColor: #E7D5C3;
+$linkHoverColor: #D8C7B6;
+
+.nav {
+    background-color: $navBgColor;
+    padding: 0 10%;
+    display: flex;
+    min-height: $minNavHeight;
+    .logoContainer {
+        margin-right: 60px;
+        cursor: pointer;
+        .logo {
+            font-size: 40px;
+            font-style: italic;
+            letter-spacing: 10px;
+        }
+    }
+    .linksContainer {
+        font-size: 18px;
+        height: 100%;
+        min-height: $minNavHeight;
+        display: flex;
+        .link {
+            padding: 0 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: .1s background-color ease-in;
+            &:hover {
+                background-color: $linkHoverColor;
+            }
+        }
+    }
+}
