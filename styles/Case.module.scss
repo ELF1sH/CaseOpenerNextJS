@@ -5,6 +5,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    .caseHeader {
+        margin-bottom: 30px;
+    }
     .window {
         height: 150px;
         width: 500px;
@@ -15,17 +18,42 @@
             display: flex;
             position: absolute;
             top: 0;
-            left: 0;
+            left: -#{random(130) + 10}px;
+            .tapeItem {
+                border-right: 1px solid white;
+            }
         }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: block;
+            width: 7px;
+            height: 100%;
+            z-index: 34;
+            background-color: white;
+        }
+    }
+    .itemsOverview {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(136px, 1fr));
+        justify-content: flex-start;
+        align-content: flex-start;
+        column-gap: 20px;
+        row-gap: 20px;
+        width: 97%;
     }
 }
 
 .tapeAnimation {
-    animation: tapeScroll 5s ease-in-out forwards;
+    animation: tapeScroll 10s ease-in-out forwards;
 }
 
 @keyframes tapeScroll {
     to {
-        left: -7000px;
+        left: -14000px;
     }
 }

@@ -36,11 +36,107 @@ export const articles = [
 export const cases = [
     {
         id: 1,
-        name: 'Fracture case'
+        name: 'Fracture case',
+        items: [
+
+        ]
     },
     {
         id: 2,
-        name: 'Clutch case'
+        name: 'Clutch case',
+        quantities: {
+            'milSpec': 7,
+            'restricted': 5,
+            'classified': 3,
+            'covert': 2
+        },
+        items: [
+            {
+                id: 1,
+                name: 'PP-Bizon | Night Riot',
+                rarity: 'milSpec'
+            },
+            {
+                id: 2,
+                name: 'Five-SeveN | Flame Test',
+                rarity: 'milSpec'
+            },
+            {
+                id: 3,
+                name: 'XM1014 | Oxide Blaze',
+                rarity: 'milSpec'
+            },
+            {
+                id: 4,
+                name: 'SG 553 | Aloha',
+                rarity: 'milSpec'
+            },
+            {
+                id: 5,
+                name: 'P2000 | Urban Hazard',
+                rarity: 'milSpec'
+            },
+            {
+                id: 6,
+                name: 'R8 Revolver | Grip',
+                rarity: 'milSpec'
+            },
+            {
+                id: 7,
+                name: 'MP9 | Black Sand',
+                rarity: 'milSpec'
+            },
+            {
+                id: 8,
+                name: 'Negev | Lionfish',
+                rarity: 'restricted'
+            },
+            {
+                id: 9,
+                name: 'Nova | Wild Six',
+                rarity: 'restricted'
+            },
+            {
+                id: 10,
+                name: 'MAG-7 | SWAG-7',
+                rarity: 'restricted'
+            },
+            {
+                id: 11,
+                name: 'UMP-45 | Arctic Wolf',
+                rarity: 'restricted'
+            },
+            {
+                id: 12,
+                name: 'Glock-18 | Moonrise',
+                rarity: 'restricted'
+            },
+            {
+                id: 13,
+                name: 'AUG | Stymphalian',
+                rarity: 'classified'
+            },
+            {
+                id: 14,
+                name: 'AWP | Mortis',
+                rarity: 'classified'
+            },
+            {
+                id: 15,
+                name: 'USP-S | Cortex',
+                rarity: 'classified'
+            },
+            {
+                id: 16,
+                name: 'MP7 | Bloodsport',
+                rarity: 'covert'
+            },
+            {
+                id: 17,
+                name: 'M4A4 | Neo-Noir',
+                rarity: 'covert'
+            }
+        ]
     }
 ]
 
@@ -54,4 +150,8 @@ export const probabilities = {
 
 export const getRandomFloat = (start, end) => {
     return (Math.random() * (end - start) + start).toFixed(4)
+}
+
+export const getRandomInt = (start, end) => {
+    return Math.floor(Math.random() * (end - start + 1)) + start;
 }

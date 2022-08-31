@@ -3,21 +3,46 @@
 .container {
     width: 146px;
     height: 146px;
-    border-right: 1px solid white;
+    position: relative;
+    .imgWrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 106px;
+        background: radial-gradient($weaponBgLightGrad, $weaponBgDarkGrad);
+    }
+    .bg {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 7px;
+        p {
+            font-size: 13px;
+            &:first-child {
+                font-weight: 800;
+            }
+        }
+    }
 }
 
 .exceedinglyRare {
     background-color: $exceedinglyRare;
 }
 .covert {
-    background-color: $covertColor;
+    background: linear-gradient(45deg, $covertLightColor, $covertDarkColor);
 }
 .classified {
-    background-color: $classifiedColor;
+    background: linear-gradient(45deg, $classifiedLightColor, $classifiedDarkColor);
 }
 .restricted {
-    background-color: $restrictedColor;
+    background: linear-gradient(45deg, $restrictedLightColor, $restrictedDarkColor);
 }
 .milSpec {
-    background-color: $milSpecColor;
+    background: linear-gradient(45deg, $milSpecLightColor, $milSpecDarkColor);
 }

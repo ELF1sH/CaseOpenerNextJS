@@ -1,12 +1,19 @@
 $mainBgColor: #14213d;
 $mainFontColor: #D8C7B6;
 
+$weaponBgLightGrad: #E3E3E3;
+$weaponBgDarkGrad: #8B8C8B;
+
 $minNavHeight: 53px;
 $exceedinglyRare: #CFB017;
-$covertColor: #EB4B4B;
-$classifiedColor: #D32CE6;
-$restrictedColor: #8847FF;
-$milSpecColor: #4B69CD;
+$covertDarkColor: #6C373B;
+$covertLightColor: #E94E4E;
+$classifiedDarkColor: #652A69;
+$classifiedLightColor: #CF2EE2;
+$restrictedDarkColor: #3B295F;
+$restrictedLightColor: #723CD2;
+$milSpecDarkColor: #333D76;
+$milSpecLightColor: #4664ED;
 
 
 @mixin mainHover($borderWidth) {
