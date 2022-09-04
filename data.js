@@ -1,3 +1,6 @@
+import fractureCaseItems from "./public/cases/FractureCaseItems/FractureCaseItems";
+import clutchCaseItems from "./public/cases/ClutchCaseItems/ClutchCaseItems";
+
 export const articles = [
     {
         id: '1',
@@ -37,8 +40,98 @@ export const cases = [
     {
         id: 1,
         name: 'Fracture case',
+        quantities: {
+            'milSpec': 7,
+            'restricted': 5,
+            'classified': 3,
+            'covert': 2
+        },
         items: [
-
+            {
+                id: 1,
+                name: 'SG 553 | Ol\' Rusty',
+                rarity: 'milSpec'
+            },
+            {
+                id: 2,
+                name: 'Negev | Ultralight',
+                rarity: 'milSpec'
+            },
+            {
+                id: 3,
+                name: 'P250 | Cassette',
+                rarity: 'milSpec'
+            },
+            {
+                id: 4,
+                name: 'P90 | Freight',
+                rarity: 'milSpec'
+            },
+            {
+                id: 5,
+                name: 'P2000 | Gnarled',
+                rarity: 'milSpec'
+            },
+            {
+                id: 6,
+                name: 'PP-Bizon | Runic',
+                rarity: 'milSpec'
+            },
+            {
+                id: 7,
+                name: 'SSG 08 | Mainframe 001',
+                rarity: 'milSpec'
+            },
+            {
+                id: 8,
+                name: 'MP5-SD | Kitbash',
+                rarity: 'restricted'
+            },
+            {
+                id: 9,
+                name: 'Galil AR | Connexion',
+                rarity: 'restricted'
+            },
+            {
+                id: 10,
+                name: 'Tec-9 | Brother',
+                rarity: 'restricted'
+            },
+            {
+                id: 11,
+                name: 'MAC-10 | Allure',
+                rarity: 'restricted'
+            },
+            {
+                id: 12,
+                name: 'MAG-7 | Monster Call',
+                rarity: 'restricted'
+            },
+            {
+                id: 13,
+                name: 'XM1014 | Entombed',
+                rarity: 'classified'
+            },
+            {
+                id: 14,
+                name: 'M4A4 | Tooth Fairy',
+                rarity: 'classified'
+            },
+            {
+                id: 15,
+                name: 'Glock-18 | Vogue',
+                rarity: 'classified'
+            },
+            {
+                id: 16,
+                name: 'AK-47 | Legion of Anubis',
+                rarity: 'covert'
+            },
+            {
+                id: 17,
+                name: 'Desert Eagle | Printstream',
+                rarity: 'covert'
+            }
         ]
     },
     {
@@ -139,6 +232,16 @@ export const cases = [
         ]
     }
 ]
+
+export const getImages = id => {
+    if (id === 1) {
+        return fractureCaseItems
+    } else if (id === 2) {
+        return clutchCaseItems
+    } else {
+        return clutchCaseItems
+    }
+}
 
 export const probabilities = {
     'exceedinglyRare': 0.3,

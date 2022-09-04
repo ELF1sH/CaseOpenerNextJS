@@ -31,18 +31,3 @@
     }
 }
 
-.exceedinglyRare {
-    background-color: $exceedinglyRare;
-}
-.covert {
-    background: linear-gradient(45deg, $covertLightColor, $covertDarkColor);
-}
-.classified {
-    background: linear-gradient(45deg, $classifiedLightColor, $classifiedDarkColor);
-}
-.restricted {
-    background: linear-gradient(45deg, $restrictedLightColor, $restrictedDarkColor);
-}
-.milSpec {
-    background: linear-gradient(45deg, $milSpecLightColor, $milSpecDarkColor);
-}

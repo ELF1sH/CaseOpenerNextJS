@@ -3,12 +3,11 @@ import Image from "next/image";
 import styles from '../styles/Case.module.scss'
 import rareItemImage from '../public/cases/CommonItems/rare_item.png'
 
-import clutchCaseItems from '../public/cases/ClutchCaseItems/ClutchCaseItems'
+import { getImages } from "../data";
 
 const ItemsOverview = ({ caseInfo }) => {
 
-    let caseItemsImages = null
-    if (caseInfo.id === 2) caseItemsImages = clutchCaseItems
+    const caseItemsImages = getImages(caseInfo.id)
 
     return (
         <div className={styles.itemsOverview}>

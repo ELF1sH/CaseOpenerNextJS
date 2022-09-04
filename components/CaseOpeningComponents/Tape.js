@@ -1,8 +1,9 @@
 import { getRandomFloat, probabilities, getRandomInt } from "../../data";
 import CaseItem from "./CaseItem";
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import styles from '../../styles/Case.module.scss'
-import clutchCaseItems from "../../public/cases/ClutchCaseItems/ClutchCaseItems";
+import {getImages} from "../../data";
+
 import rareItemImage from '../../public/cases/CommonItems/rare_item.png'
 
 const summarizedProbabilities = new Array(Object.values(probabilities).length).fill(0)
@@ -29,7 +30,7 @@ const getRandomType = () => {
 }
 
 const getRandomSkinId = (rarity, quantities, caseId) => {
-    const quantity = quantities[rarity]
+    const quantity = quantities[rarity]   // quantity of particular rarity in particular case
     const randomNumber = getRandomInt(0, quantity - 1)
     let skinNumber = 0
     switch (rarity) {
@@ -51,14 +52,8 @@ const getRandomSkinId = (rarity, quantities, caseId) => {
     return skinNumber
 }
 
-const getRandomTape = (length, caseInfo, rarityToDrop = null) => {
+const getRandomTape = (length, caseInfo) => {
     const rarities = [...Array(length)].map(_ => getRandomType())
-
-    // to config actual drop
-    if (rarityToDrop !== null) {
-        const dropItemNumber = Math.ceil(14000 / 146) + 1;      // tape length / one item length + 1
-        rarities[dropItemNumber] = rarityToDrop
-    }
 
     let tape = rarities.map(function(r) {
         return {
@@ -66,25 +61,36 @@ const getRandomTape = (length, caseInfo, rarityToDrop = null) => {
             skinId: getRandomSkinId(r, caseInfo.quantities, caseInfo.id),
         }
     })
+    const images = getImages(caseInfo.id)
     tape = tape.map(function(t) {
         return {
             rarity: t.rarity,
             skinId: t.skinId,
             weaponName: t.skinId > 0 ? caseInfo.items.find(x => t.skinId === x.id).name : "★ Rare Special Items ★",
-            img: t.skinId > 0 ? clutchCaseItems[t.skinId - 1] : rareItemImage
+            img: t.skinId > 0 ? images[t.skinId - 1] : rareItemImage
         }
     })
 
-    return tape
+    const dropItemNumber = Math.ceil(14000 / 146) + 1;      // tape length / one item length + 1
+
+    return { dropItemNumber, tape }
 }
 
-const Tape = ({caseInfo, className}) => {
+const Tape = ({ caseInfo, className, isFinished, setDroppedItem }) => {
 
-    const [tape, setTape] = useState(getRandomTape(100, caseInfo))
+    const [state, setState] = useState(getRandomTape(100, caseInfo))
+
+    useEffect(() => {
+        // the function is invoked before changing values of dependencies
+        if (!isFinished) {
+            setDroppedItem(state.tape[state.dropItemNumber])
+        }
+    }, [isFinished]);
+
 
     return (
         <div className={`${styles.tape} ${className}`}>
-            { tape.map((item, idx) => <CaseItem
+            { state.tape.map((item, idx) => <CaseItem
                 rarity={ item.rarity }
                 key={ idx }
                 className={ styles.tapeItem }
